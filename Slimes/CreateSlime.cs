@@ -1,6 +1,8 @@
+using System;
 using SRML.SR;
 using SRML.Utils;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace DreamSlimes.Slimes
 {
@@ -8,9 +10,9 @@ namespace DreamSlimes.Slimes
     {
         public static void CreateDreamSlime()
         {
-            SlimeDefinition slimeByIdentifiableId =
+            var slimeByIdentifiableId =
                 SRSingleton<GameContext>.Instance.SlimeDefinitions.GetSlimeByIdentifiableId(Identifiable.Id.PINK_SLIME);
-            SlimeDefinition slimeDefinition = (SlimeDefinition)PrefabUtils.DeepCopyObject(slimeByIdentifiableId);
+            var slimeDefinition = (SlimeDefinition)PrefabUtils.DeepCopyObject(slimeByIdentifiableId);
             slimeDefinition.AppearancesDefault = new SlimeAppearance[1];
 
             slimeDefinition.Diet.Produces = new[] { Id.DREAM_PLORT };
@@ -19,14 +21,14 @@ namespace DreamSlimes.Slimes
             slimeDefinition.Diet.EatMap?.Clear();
 
             slimeDefinition.CanLargofy = false;
-            slimeDefinition.FavoriteToys = System.Array.Empty<Identifiable.Id>();
+            slimeDefinition.FavoriteToys = Array.Empty<Identifiable.Id>();
             slimeDefinition.Name = "Dream Slime";
             slimeDefinition.IdentifiableId = Id.DREAM_SLIME;
 
-            GameObject go =
+            var go =
                 PrefabUtils.CopyPrefab(
                     SRSingleton<GameContext>.Instance.LookupDirector.GetPrefab(Identifiable.Id.PINK_SLIME));
-            go.name = ("Dream_Slime");
+            go.name = "Dream_Slime";
             go.GetComponent<PlayWithToys>().slimeDefinition = slimeDefinition;
             go.GetComponent<SlimeAppearanceApplicator>().SlimeDefinition = slimeDefinition;
             go.GetComponent<SlimeEat>().slimeDefinition = slimeDefinition;
@@ -35,17 +37,17 @@ namespace DreamSlimes.Slimes
             go.transform.localScale = new Vector3(0.75f, 0.75f, 0.75f);
             Object.Destroy(go.GetComponent<PinkSlimeFoodTypeTracker>());
 
-            SlimeAppearance slimeAppearance =
+            var slimeAppearance =
                 (SlimeAppearance)PrefabUtils.DeepCopyObject(slimeByIdentifiableId.AppearancesDefault[0]);
             slimeDefinition.AppearancesDefault[0] = slimeAppearance;
-            SlimeAppearanceStructure[] structures = slimeAppearance.Structures;
-            SlimeAppearanceStructure[] structures2 = structures;
-            foreach (SlimeAppearanceStructure structure in structures2)
+            var structures = slimeAppearance.Structures;
+            var structures2 = structures;
+            foreach (var structure in structures2)
             {
-                Material[] defaultMaterials = structure.DefaultMaterials;
+                var defaultMaterials = structure.DefaultMaterials;
                 if (defaultMaterials != null && defaultMaterials.Length != 0)
                 {
-                    Material val8 = Object.Instantiate(SRSingleton<GameContext>.Instance
+                    var val8 = Object.Instantiate(SRSingleton<GameContext>.Instance
                         .SlimeDefinitions.GetSlimeByIdentifiableId(Identifiable.Id.PINK_SLIME).AppearancesDefault[0]
                         .Structures[0]
                         .DefaultMaterials[0]);
@@ -58,8 +60,8 @@ namespace DreamSlimes.Slimes
                 }
             }
 
-            SlimeExpressionFace[] expressionFaces = slimeAppearance.Face.ExpressionFaces;
-            foreach (SlimeExpressionFace val9 in expressionFaces)
+            var expressionFaces = slimeAppearance.Face.ExpressionFaces;
+            foreach (var val9 in expressionFaces)
             {
                 if (val9.Mouth)
                 {
@@ -80,19 +82,19 @@ namespace DreamSlimes.Slimes
             }
 
             slimeAppearance.Face.OnEnable();
-            SlimeAppearance val10 = slimeAppearance;
-            SlimeAppearance.Palette colorPalette = default(SlimeAppearance.Palette);
-            colorPalette.Top = (new Color32(252, 254, byte.MaxValue, byte.MaxValue));
-            colorPalette.Middle = (new Color32(210, 236, 247, byte.MaxValue));
-            colorPalette.Bottom = (new Color32(124, 138, 163, byte.MaxValue));
+            var val10 = slimeAppearance;
+            var colorPalette = default(SlimeAppearance.Palette);
+            colorPalette.Top = new Color32(252, 254, byte.MaxValue, byte.MaxValue);
+            colorPalette.Middle = new Color32(210, 236, 247, byte.MaxValue);
+            colorPalette.Bottom = new Color32(124, 138, 163, byte.MaxValue);
             val10.ColorPalette = colorPalette;
             go.GetComponent<SlimeAppearanceApplicator>().Appearance = slimeAppearance;
             LookupRegistry.RegisterIdentifiablePrefab(go);
             SlimeRegistry.RegisterSlimeDefinition(slimeDefinition);
             AmmoRegistry.RegisterAmmoPrefab(PlayerState.AmmoMode.DEFAULT,
                 SRSingleton<GameContext>.Instance.LookupDirector.GetPrefab(Id.DREAM_SLIME));
-            Sprite val11 = slimeAppearance.Icon = Main.assetBundle.LoadAsset<Sprite>("dreamPlortIcon");
-            slimeAppearance.ColorPalette.Ammo = (new Color32(210, 236, 247, 225));
+            var val11 = slimeAppearance.Icon = Main.assetBundle.LoadAsset<Sprite>("dreamPlortIcon");
+            slimeAppearance.ColorPalette.Ammo = new Color32(210, 236, 247, 225);
             SRSingleton<GameContext>.Instance.LookupDirector.GetPrefab(Id.DREAM_SLIME)
                 .GetComponent<Vacuumable>()
                 .size = Vacuumable.Size.LARGE;

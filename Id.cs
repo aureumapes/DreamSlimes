@@ -2,7 +2,6 @@ using SRML.Utils.Enum;
 
 namespace DreamSlimes
 {
-    
     [EnumHolder]
     public class Id
     {

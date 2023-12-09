@@ -1,28 +1,29 @@
-using System.Collections.Generic;
+using System.IO;
+using System.Reflection;
+using DreamSlimes.Patchs;
+using DreamSlimes.Slimes;
 using SRML;
-using SRML.Console;
 using SRML.SR;
 using SRML.SR.Translation;
-using SRML.Utils;
 using UnityEngine;
 
 namespace DreamSlimes
 {
     public class Main : ModEntryPoint
     {
-        static System.IO.Stream manifestResourceStream;
+        private static Stream manifestResourceStream;
         public static AssetBundle assetBundle;
         public static Color color1 = new Color32(0xe4, 0xb0, 0xfc, 0xff);
         public static Color color2 = new Color32(0xb9, 0xb0, 0xfc, 0xff);
         public static Color color3 = new Color32(0xa0, 0xa0, 0xff, 0xff);
-        
+
         public override void PreLoad()
         {
             HarmonyInstance.PatchAll();
-            manifestResourceStream = System.Reflection.Assembly.GetExecutingAssembly()
+            manifestResourceStream = Assembly.GetExecutingAssembly()
                 .GetManifestResourceStream("DreamSlimes.dreamslimes1");
             assetBundle = AssetBundle.LoadFromStream(manifestResourceStream);
-            
+
             PediaRegistry.RegisterIdentifiableMapping(PediaDirector.Id.PLORTS, Id.DREAM_SLIME);
             PediaRegistry.RegisterIdentifiableMapping(Id.DREAM_SLIME_ENTRY, Id.DREAM_PLORT);
             PediaRegistry.SetPediaCategory(Id.DREAM_SLIME_ENTRY, PediaRegistry.PediaCategory.SLIMES);
@@ -40,9 +41,9 @@ namespace DreamSlimes
 
         public override void Load()
         {
-            Slimes.CreatePlort.CreateDreamPlort();
-            Slimes.CreateSlime.CreateDreamSlime();
-            Patchs.AddEatMap.PatchEatMaps();
+            CreatePlort.CreateDreamPlort();
+            CreateSlime.CreateDreamSlime();
+            AddEatMap.PatchEatMaps();
             ConsoleInstance.Log("Loaded Dream SLimes successfully");
         }
     }

@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DreamSlimes", "DreamSlimes.csproj", "{A4FCB311-6A68-499D-ADFC-7740DEF6F09B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A4FCB311-6A68-499D-ADFC-7740DEF6F09B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4FCB311-6A68-499D-ADFC-7740DEF6F09B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4FCB311-6A68-499D-ADFC-7740DEF6F09B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4FCB311-6A68-499D-ADFC-7740DEF6F09B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

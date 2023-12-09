@@ -1,0 +1,9 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=_002Fmnt_002FLinux_002DHDD_002FDevelopment_002Fsrml_002Dlibs_002F0Harmony_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=_002Fmnt_002FLinux_002DHDD_002FDevelopment_002Fsrml_002Dlibs_002FAssembly_002DCSharp_005Fold_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=_002Fmnt_002FLinux_002DHDD_002FDevelopment_002Fsrml_002Dlibs_002FSRML_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=_002Fmnt_002FLinux_002DHDD_002FDevelopment_002Fsrml_002Dlibs_002FUnityEngine_002ECoreModule_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=_002Fmnt_002FLinux_002DHDD_002FGames_002FSR_002Fgame_002FSlimeRancher_005FData_002FManaged_002FAssembly_002DCSharp_005Fold_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=_002Fmnt_002FLinux_002DHDD_002FGames_002FSR_002Fgame_002FSlimeRancher_005FData_002FManaged_002FUnityEngine_002EAnimationModule_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=_002Fmnt_002FLinux_002DHDD_002FGames_002FSR_002Fgame_002FSlimeRancher_005FData_002FManaged_002FUnityEngine_002EAssetBundleModule_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=_002Fmnt_002FLinux_002DHDD_002FGames_002FSR_002Fgame_002FSlimeRancher_005FData_002FManaged_002FUnityEngine_002EPhysicsModule_002Edll/@EntryIndexedValue">True</s:Boolean></wpf:ResourceDictionary>
